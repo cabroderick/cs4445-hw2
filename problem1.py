@@ -42,7 +42,7 @@ def Terms_and_Conditions():
 def hello_page():
     #########################################
     ## INSERT YOUR CODE HERE (5 points)
-
+    webpage = 'Hello World!'
     #########################################
     return webpage
     #-----------------
@@ -69,7 +69,7 @@ def hello_page():
 def rand_page():
     #########################################
     ## INSERT YOUR CODE HERE (5 points)
-
+    webpage = str(random.uniform(0,1))
     #########################################
     return webpage
     #-----------------
@@ -99,7 +99,7 @@ def rand_page():
 def vote(ID):
     #########################################
     ## INSERT YOUR CODE HERE (5 points)
-
+    webpage = 'Thank you for voting ' + str(ID)
     #########################################
     return webpage
     #-----------------
@@ -126,7 +126,7 @@ def vote(ID):
 def create_template():
     #########################################
     ## INSERT YOUR CODE HERE (5 points)
-
+    t = Template("Hello, {{ username }}!")
     #########################################
     return t
     #-----------------
@@ -152,12 +152,14 @@ def create_template():
 def load_template(filename):
     #########################################
     ## INSERT YOUR CODE HERE (5 points)
-
+    templateLoader = FileSystemLoader(searchpath="./")
+    env = Environment(loader=templateLoader)
+    t = env.get_template(filename)
     #########################################
     return t
     #-----------------
     '''
-        TEST: Now you can test the correctness of your code above by typing the following in the terminal:
+        TEST: Now you can test the corrfilenameectness of your code above by typing the following in the terminal:
         ---------------------------------------------------
         python3 -m nose -v test1.py:test_load_template
         ---------------------------------------------------
